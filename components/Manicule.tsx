@@ -326,7 +326,7 @@ function detect(
 
 const Manicule = () => {
 
-  if(mobile()) {
+  if(mobile({tablet: true})) {
     return (
       <div className="relative bg-slate-700 rounded-lg shadow-lg mx-auto">
         <div className="p-5 text-white">

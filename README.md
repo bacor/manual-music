@@ -1,6 +1,6 @@
 # Manual Music
 
-**Manual Music is an experiment by [Bas Cornelissen](https://bascornelissen.nl) that tries to turn the hand into an instrument.**
+**Manual Music is an experiment that tries to turn the hand into an instrument.**
 
 
 ## Guidonian Hand

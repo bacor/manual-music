@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
 import "../utils/curve.js";
+import mobile  from "is-mobile";
 
 // Paths
 const wasmFolderPath =
@@ -324,6 +325,20 @@ function detect(
 }
 
 const Manicule = () => {
+
+  if(mobile()) {
+    return (
+      <div className="relative bg-slate-700 rounded-lg shadow-lg mx-auto">
+        <div className="p-5 text-white">
+          <p>
+            Oh no! this experiment is not available on mobile devices — yet. Please have a look on your computer, and check back later. Thanks!
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mirrorToggleRef = useRef<HTMLInputElement>(null);

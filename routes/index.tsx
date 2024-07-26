@@ -3,7 +3,7 @@ import ManiculeWrapper from "../islands/ManiculeWrapper.tsx";
 export default function Mediapipe() {
   return (
     <div className="bg-slate-800 min-h-screen">
-      <div className="w-[640px] mx-auto">
+      <div className="mx-auto px-5 max-w-[640px]">
         <div className="pt-20 pb-10">
           {/* <div className="relative bg-red-500 block rotate-10 text-xs text-white">highly experimental</div> */}
           <h1 className="text-2xl mb-6 text-slate-200 font-bold">
@@ -23,7 +23,9 @@ export default function Mediapipe() {
           </ol>
         </div>
 
-        <ManiculeWrapper />
+        <div className="-mx-5">
+          <ManiculeWrapper />
+        </div>
 
         <div className="pt-20 pb-10  text-slate-600 hover:text-slate-500 transition-colors">
           <h2 className="font-semibold">Some background</h2>
@@ -45,7 +47,7 @@ export default function Mediapipe() {
             that choir masters could use the same gestures to indicate which
             notes the singers were supposed to sing.
           </p>
-          <p className="mb-4">
+          <p className="mb-8">
             <em className="font-italic">Manual Music</em> is a random experiment by{" "}
             <a
               href="https://bascornelissen.nl"
@@ -72,10 +74,14 @@ export default function Mediapipe() {
             gestures, and then train a gesture recognition model on that data.
           </p>
 
+          
+
           <p class="text-xs">
-            Copyright © Bas Cornelissen, 2024. The code might be released in the future.
-            Built using <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker" class="text-slate-400">Mediapipe Solutions</a>,  <a href="https://fresh.deno.dev/" class="text-slate-400">Fresh</a>, <a href="https://deno.dev/" class="text-slate-400">Deno</a>, <a href="https://tailwindcss.com" class="text-slate-400">Tailwind</a>,  <a href="https://preactjs.com/" class="text-slate-400">Preact</a> and more.
             
+            You can find all <a href="https://github.com/bacor/manual-music" class="text-slate-400">code on GitHub</a>.
+            Built using <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker" class="text-slate-400">Mediapipe Solutions</a>,  <a href="https://fresh.deno.dev/" class="text-slate-400">Fresh</a>, <a href="https://deno.dev/" class="text-slate-400">Deno</a>, <a href="https://tailwindcss.com" class="text-slate-400">Tailwind</a>,  <a href="https://preactjs.com/" class="text-slate-400">Preact</a> and more.
+            <br/> <br />
+            Copyright © Bas Cornelissen, 2024.
           </p>
         </div>
       </div>

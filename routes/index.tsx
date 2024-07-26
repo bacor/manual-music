@@ -30,7 +30,7 @@ export default function Mediapipe() {
         <div className="pt-20 pb-10  text-slate-600 hover:text-slate-500 transition-colors">
           <h2 className="font-semibold">Nothing happens?</h2>
           <p class="mb-8">
-            If the red dot at the top left of the video does not turn green your hand moves in view, I'm afraid the app doesn't work in your browser. Try Chrome, Firefox or Safari on your computer: I've tested the app in those browsers on a MacBook.
+            If the red dot at the top left of the video does not turn green when your hand moves in view, I'm afraid the app doesn't work in your browser. Try Chrome, Firefox or Safari on your computer: I've tested the app in those browsers on a MacBook.
           </p>
           
           <h2 className="font-semibold">Some background</h2>

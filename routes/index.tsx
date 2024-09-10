@@ -1,6 +1,6 @@
-import ManiculeWrapper from "../islands/ManiculeWrapper.tsx";
+import ComponentWrapper from "../islands/ComponentWrapper.tsx";
 
-export default function Mediapipe() {
+export default function IndexPage() {
   return (
     <div className="bg-slate-800 min-h-screen">
       <div className="mx-auto px-5 max-w-[640px]">
@@ -29,7 +29,7 @@ export default function Mediapipe() {
         </div>
 
         <div className="-mx-5">
-          <ManiculeWrapper />
+          <ComponentWrapper component="visualizer" />
         </div>
 
         <div className="pt-10 pb-10  text-slate-600 hover:text-slate-500 transition-colors">

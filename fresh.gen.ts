@@ -4,18 +4,22 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $classify from "./routes/classify.tsx";
 import * as $index from "./routes/index.tsx";
-import * as $ManiculeWrapper from "./islands/ManiculeWrapper.tsx";
+import * as $record from "./routes/record.tsx";
+import * as $ComponentWrapper from "./islands/ComponentWrapper.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/classify.tsx": $classify,
     "./routes/index.tsx": $index,
+    "./routes/record.tsx": $record,
   },
   islands: {
-    "./islands/ManiculeWrapper.tsx": $ManiculeWrapper,
+    "./islands/ComponentWrapper.tsx": $ComponentWrapper,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

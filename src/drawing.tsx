@@ -93,7 +93,6 @@ export function drawMarkers(
     showMarkers = true,
     showNames = true,
     showActive = true,
-    mirror = true,
     activeIndex = null,
   } = {},
 ) {
@@ -161,7 +160,6 @@ export function drawHands(
     showFingers = true,
     showMarkers = true,
     showNames = true,
-    mirror = true,
     markerSize = 3,
   } = {},
 ) {
@@ -182,7 +180,7 @@ export function drawHands(
           closestIdx = index;
         }
       });
-      activeIndex = closestDist < 0.1 ? closestIdx : null
+      activeIndex = closestDist < 0.1 ? closestIdx : null;
     }
 
     if (showSpiral) drawSpiral(hand, canvas);
@@ -192,7 +190,6 @@ export function drawHands(
       showNames,
       showMarkers,
       markerSize,
-      mirror,
       activeIndex,
     });
   });

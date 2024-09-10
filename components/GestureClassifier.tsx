@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { Signal, signal } from "@preact/signals";
-import { HandLandmarkerResult } from "@mediapipe/tasks-vision";
 import HandsDetector, { OnFrameProps } from "./HandsDetector.tsx";
 import VideoIndicator from "./VideoIndicator.tsx";
 
@@ -39,8 +38,7 @@ function Prediction({ gesture }: { gesture: Signal<string | null> }) {
 const clf = (landmarks: Landmark[]) => thumbDistanceClassifier(landmarks, 0.1);
 
 function GestureClassifier({ classifier = clf }) {
-  const [isLoaded, setLoaded] = useState(false);
-  const [useBNatural, setUseBNatural] = useState(false);
+  const useBNatural = true;
   const synth = useRef<Tone.PolySynth<Tone.Synth<Tone.SynthOptions>> | null>(
     null,
   );
@@ -50,11 +48,11 @@ function GestureClassifier({ classifier = clf }) {
     if (handsPresent) {
       drawHands(results.landmarks, canvas, DRAWING_OPTS);
       const pred = classifier(results.landmarks[0]);
-      if(pred !== null) {
-        if(pred !== gesture.value) {
-          synth.current?.releaseAll()
-          let pitch = gestureToPitch[pred]
-          if(pitch?.startsWith("B") && useBNatural) {
+      if (pred !== null) {
+        if (pred !== gesture.value) {
+          synth.current?.releaseAll();
+          let pitch = gestureToPitch[pred];
+          if (pitch?.startsWith("B") && useBNatural) {
             pitch = pitch.replace("Bb", "B");
           }
           synth.current?.triggerAttack(pitch);
@@ -62,7 +60,7 @@ function GestureClassifier({ classifier = clf }) {
       } else {
         synth.current?.releaseAll();
       }
-      gesture.value = pred
+      gesture.value = pred;
     } else {
       clearCanvas(canvas);
       synth.current?.releaseAll();
@@ -71,30 +69,14 @@ function GestureClassifier({ classifier = clf }) {
   }
 
   useEffect(() => {
-    synth.current = new Tone.PolySynth({
-     
-    }, {
-      onload: () => {
-        // doesn't work
-        console.log("LOADED!");
-        setLoaded(true);
-      },
-    }).toDestination();
+    synth.current = new Tone.PolySynth().toDestination();
     synth.current.set({
       envelope: {
         attack: 2,
         decay: 4,
-        release: 3
-      }
-    })
-    // sampler.current = new Sampler(
-    //   { A1 },
-    //   {
-    //     onload: () => {
-    //       setLoaded(true);
-    //     }
-    //   }
-    // ).toDestination();
+        release: 3,
+      },
+    });
   }, []);
 
   const handleClick = async () => {

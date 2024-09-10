@@ -1,5 +1,5 @@
 import gestures from "../gestures.tsx";
-import { Script, Step, Gesture } from "../types.tsx";
+import { Gesture, Script, Step } from "../types.tsx";
 
 function getRepeatedGestureScript(
   gesture: Gesture,
@@ -25,12 +25,12 @@ function getRepeatedGestureScript(
       duration: 5,
       instruction: `Please show ${gesture.name} (${gesture.id}).`,
       activeIndex: gesture.index,
-      record: true
+      record: true,
     } as Step);
     steps.push({
       duration: 2,
       instruction: "Open your hand",
-      record: true
+      record: true,
     } as Step);
   }
   steps.push({

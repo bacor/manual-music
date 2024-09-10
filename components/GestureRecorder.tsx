@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "preact/hooks";
 import { signal } from "@preact/signals";
-import { HandLandmarkerResult } from "@mediapipe/tasks-vision";
 import HandsDetector, { OnFrameProps } from "./HandsDetector.tsx";
 import VideoIndicator from "./VideoIndicator.tsx";
 

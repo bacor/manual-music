@@ -9,7 +9,7 @@ export default function IndexPage() {
           <h1 className="text-2xl mb-6 text-slate-200 font-bold">
             Manual Music
             <span class="bg-red-600 text-red-100 text-[0.4em] font-medium ms-3 px-2 py-0.5 rounded-full relative -top-1">
-              EXPERIMENTAL v0.1
+              EXPERIMENTAL v0.2
             </span>
             <span className="block font-normal text-slate-600">
               Guidonian Hand Readings with AI
@@ -72,7 +72,8 @@ export default function IndexPage() {
               Bas Cornelissen
             </a>{" "}
             that tries to turn the hand into an instrument. As you can see, the
-            experiment is in a very early stage: music is still nowhere to be found. The project revolves around{" "}
+            experiment is in a very early stage: music is still nowhere to be
+            found. The project revolves around{" "}
             <a
               href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker"
               className="text-slate-400 hover:underline"
@@ -88,7 +89,10 @@ export default function IndexPage() {
             permitting, I was hoping to turn this app into an interface which
             could be used to collect annotated solmization gestures, and then
             train a gesture recognition model on that data. Interested in
-            joining the project? <a href="https://bascornelissen.nl/contact" class="text-slate-400">Please get in touch!</a>
+            joining the project?{" "}
+            <a href="https://bascornelissen.nl/contact" class="text-slate-400">
+              Please get in touch!
+            </a>
           </p>
 
           <p class="text-xs">

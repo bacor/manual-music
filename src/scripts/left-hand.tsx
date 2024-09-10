@@ -45,19 +45,19 @@ Object.values(gestures).filter((a) => a.id !== "none").forEach((gesture) => {
     duration: 2,
     instruction: "Open your hand",
     record: true,
-  })
+  });
 });
 
 steps.push({
   duration: 2,
   instruction: "Thank you! That was it.",
-  record: false
+  record: false,
 } as Step);
 
 const script: Script = {
   name: "Complete left hand",
   fps: 5,
-  steps
-}
+  steps,
+};
 
 export default script;

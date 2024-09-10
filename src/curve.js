@@ -24,7 +24,7 @@ CanvasRenderingContext2D.prototype.curve = function (
   points,
   tension,
   numOfSeg,
-  close
+  close,
 ) {
   "use strict";
 
@@ -32,14 +32,11 @@ CanvasRenderingContext2D.prototype.curve = function (
   tension = typeof tension === "number" ? tension : 0.5;
   numOfSeg = numOfSeg ? numOfSeg : 20;
 
-  var pts, // clone point array
-    res = [],
-    l = points.length,
-    i,
-    cache = new Float32Array((numOfSeg + 2) * 4),
-    cachePtr = 4;
-
-  pts = points.slice(0);
+  const res = [];
+  const cache = new Float32Array((numOfSeg + 2) * 4);
+  let cachePtr = 4;
+  let pts = points.slice(0);
+  const l = points.length;
 
   if (close) {
     pts.unshift(points[l - 1]); // insert end point as first point
@@ -54,8 +51,8 @@ CanvasRenderingContext2D.prototype.curve = function (
   // cache inner-loop calculations as they are based on t alone
   cache[0] = 1;
 
-  for (i = 1; i < numOfSeg; i++) {
-    var st = i / numOfSeg,
+  for (let i = 1; i < numOfSeg; i++) {
+    const st = i / numOfSeg,
       st2 = st * st,
       st3 = st2 * st,
       st23 = st3 * 2,
@@ -81,8 +78,8 @@ CanvasRenderingContext2D.prototype.curve = function (
   }
 
   function parse(pts, cache, l) {
-    for (var i = 2; i < l; i += 2) {
-      var pt1 = pts[i],
+    for (let i = 2; i < l; i += 2) {
+      const pt1 = pts[i],
         pt2 = pts[i + 1],
         pt3 = pts[i + 2],
         pt4 = pts[i + 3],
@@ -91,8 +88,8 @@ CanvasRenderingContext2D.prototype.curve = function (
         t2x = (pts[i + 4] - pt1) * tension,
         t2y = (pts[i + 5] - pt2) * tension;
 
-      for (var t = 0; t <= numOfSeg; t++) {
-        var c = t * 4;
+      for (let t = 0; t <= numOfSeg; t++) {
+        const c = t * 4;
 
         res.push(
           cache[c] * pt1 +
@@ -102,14 +99,16 @@ CanvasRenderingContext2D.prototype.curve = function (
           cache[c] * pt2 +
             cache[c + 1] * pt4 +
             cache[c + 2] * t1y +
-            cache[c + 3] * t2y
+            cache[c + 3] * t2y,
         );
       }
     }
   }
 
   // add lines to path
-  for (i = 0, l = res.length; i < l; i += 2) this.lineTo(res[i], res[i + 1]);
+  for (let i = 0, l = res.length; i < l; i += 2) {
+    this.lineTo(res[i], res[i + 1]);
+  }
 
   return res;
 };

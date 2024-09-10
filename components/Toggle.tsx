@@ -1,7 +1,7 @@
 import { Ref } from "preact";
 
 interface ToggleProps {
-  onClick: () => void; 
+  onClick: () => void;
   reference: Ref<HTMLInputElement>;
   checked: boolean;
   label: React.ReactNode;

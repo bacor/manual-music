@@ -23,7 +23,7 @@ const gestures = [
     index: 2,
     joint: "thumb_mcp",
     name: "B mi",
-    pitch: "Bb2"
+    pitch: "Bb2",
   },
   {
     id: "03-cfaut",
@@ -31,7 +31,7 @@ const gestures = [
     index: 5,
     joint: "index_finger_mcp",
     name: "C fa ut",
-    pitch: "C3"
+    pitch: "C3",
   },
   {
     id: "04-dsolre",
@@ -39,7 +39,7 @@ const gestures = [
     index: 9,
     joint: "middle_finger_mcp",
     name: "D sol re",
-    pitch: "D3"
+    pitch: "D3",
   },
   {
     id: "05-elami",
@@ -47,7 +47,7 @@ const gestures = [
     index: 13,
     joint: "ring_finger_mcp",
     name: "E la mi",
-    pitch: "E3"
+    pitch: "E3",
   },
   {
     id: "06-ffaut",
@@ -55,7 +55,7 @@ const gestures = [
     index: 17,
     joint: "pinky_finger_mcp",
     name: "F fa ut",
-    pitch: "F3"
+    pitch: "F3",
   },
   {
     id: "07-gsolreut",
@@ -63,7 +63,7 @@ const gestures = [
     index: 18,
     joint: "pinky_finger_pip",
     name: "G sol re ut",
-    pitch: "G3"
+    pitch: "G3",
   },
   {
     id: "08-alamire",
@@ -71,7 +71,7 @@ const gestures = [
     index: 19,
     joint: "pinky_finger_dip",
     name: "A la mi re",
-    pitch: "A3"
+    pitch: "A3",
   },
   {
     id: "09-bmifa",
@@ -79,7 +79,7 @@ const gestures = [
     index: 20,
     joint: "pinky_finger_tip",
     name: "B mi fa",
-    pitch: "Bb3"
+    pitch: "Bb3",
   },
   {
     id: "10-csolfaut",
@@ -87,7 +87,7 @@ const gestures = [
     index: 16,
     joint: "ring_finger_tip",
     name: "C sol fa ut",
-    pitch: "C4"
+    pitch: "C4",
   },
   {
     id: "11-dlasolre",
@@ -95,7 +95,7 @@ const gestures = [
     index: 12,
     joint: "middle_finger_tip",
     name: "D la sol re",
-    pitch: "D4"
+    pitch: "D4",
   },
   {
     id: "12-elami",
@@ -103,7 +103,7 @@ const gestures = [
     index: 8,
     joint: "index_finger_tip",
     name: "E la mi",
-    pitch: "E4"
+    pitch: "E4",
   },
   {
     id: "13-ffaut",
@@ -111,7 +111,7 @@ const gestures = [
     index: 7,
     joint: "index_finger_dip",
     name: "F fa ut",
-    pitch: "F4"
+    pitch: "F4",
   },
   {
     id: "14-gsolreut",
@@ -119,7 +119,7 @@ const gestures = [
     index: 6,
     joint: "index_finger_pip",
     name: "G sol re ut",
-    pitch: "G4"
+    pitch: "G4",
   },
   {
     id: "15-alamire",
@@ -127,7 +127,7 @@ const gestures = [
     index: 10,
     joint: "middle_finger_pip",
     name: "A la mi re",
-    pitch: "A4"
+    pitch: "A4",
   },
   {
     id: "16-bmifa",
@@ -135,7 +135,7 @@ const gestures = [
     index: 14,
     joint: "ring_finger_pip",
     name: "B mi fa",
-    pitch: "Bb4"
+    pitch: "Bb4",
   },
   {
     id: "17-cesolla",
@@ -143,7 +143,7 @@ const gestures = [
     index: 15,
     joint: "ring_finger_dip",
     name: "C sol la",
-    pitch: "C5"
+    pitch: "C5",
   },
   {
     id: "18-delasol",
@@ -151,7 +151,7 @@ const gestures = [
     index: 11,
     joint: "middle_finger_dip",
     name: "D la sol",
-    pitch: "D5"
+    pitch: "D5",
   },
   {
     id: "19-ela",
@@ -159,7 +159,7 @@ const gestures = [
     index: null,
     joint: null,
     name: "E la",
-    pitch: "E5"
+    pitch: "E5",
   },
   {
     id: "none",
@@ -167,7 +167,7 @@ const gestures = [
     index: null,
     joint: null,
     name: "No gesture",
-    pitch: null
+    pitch: null,
   },
 ];
 

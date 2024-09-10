@@ -8,7 +8,7 @@ import { ComponentChildren } from "preact";
 
 const HandsVisualizer = lazy(() => import("../components/HandsVisualizer.tsx"));
 const GestureRecorder = lazy(() => import("../components/GestureRecorder.tsx"));
-const GesturePredictor = lazy(() =>
+const GestureClassifier = lazy(() =>
   import("../components/GestureClassifier.tsx")
 );
 

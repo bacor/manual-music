@@ -1,4 +1,4 @@
-import { Signal, signal } from "@preact/signals";
+import { Signal } from "@preact/signals";
 
 interface VideoIndicatorProps {
   on: Signal<boolean>;

@@ -28,13 +28,13 @@ Object.values(gestures).filter((a) => a.id !== "none").slice(0, 3).forEach(
 steps.push({
   duration: 2,
   instruction: "Thank you! That was it.",
-  record: false
+  record: false,
 } as Step);
 
 const script: Script = {
   name: "Demo",
   fps: 3,
   steps,
-}
+};
 
 export default script;

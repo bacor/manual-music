@@ -1,5 +1,5 @@
 import gestures from "../gestures.tsx";
-import { Script, Step } from "./types.tsx";
+import { Script, Step } from "../types.tsx";
 
 const steps: Step[] = [
   {

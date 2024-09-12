@@ -13,3 +13,5 @@ node_modules/
 static/models
 
 tmp/
+
+.DS_Store

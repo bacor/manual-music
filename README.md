@@ -23,11 +23,7 @@ The experiment is in a very early stage. The project revolves around
 [a model developed by Google](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker)
 that detect hand position in images or video. Associating the joints with joints
 with pitches is straight forward — we are showing the Medieval names. The
-difficult part is to recognize to the different gestures. The approach currently
-taken is extremely naive: we look for the joint closest to the tip of the thumb.
-That works in some cases, but is not very reliable yet. Time permitting, the
-idea is to turn this app into an interface to collect annotated solmization
-gestures, and then train a gesture recognition model on that data.
+difficult part is to recognize to the different gestures.
 
 ## Usage
 

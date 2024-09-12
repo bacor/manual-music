@@ -9,7 +9,7 @@ export default function IndexPage() {
           <h1 className="text-2xl mb-6 text-slate-200 font-bold">
             Manual Music
             <span class="bg-red-600 text-red-100 text-[0.4em] font-medium ms-3 px-2 py-0.5 rounded-full relative -top-1">
-              EXPERIMENTAL v0.2
+              EXPERIMENTAL v0.3
             </span>
             <span className="block font-normal text-slate-600">
               Guidonian Hand Readings with AI
@@ -71,31 +71,47 @@ export default function IndexPage() {
             >
               Bas Cornelissen
             </a>{" "}
-            that tries to turn the hand into an instrument. As you can see, the
-            experiment is in a very early stage: music is still nowhere to be
-            found. The project revolves around{" "}
+            that tries to turn the hand into an instrument. The project revolves
+            around{" "}
             <a
               href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker"
               className="text-slate-400 hover:underline"
             >
               a model developed by Google
             </a>{" "}
-            that can detect the position of a hand in images and videos.
-            Associating the detected joint positions with pitches is then
-            straightforward. The difficult part is to recognize the different
-            gestures. I currently take a very naive approach by simply looking
-            for the joint closest to the tip of the thumb. That works okayish
-            for some of the joints, but is not very reliable yet. Time
-            permitting, I was hoping to turn this app into an interface which
-            could be used to collect annotated solmization gestures, and then
-            train a gesture recognition model on that data. Interested in
-            joining the project?{" "}
+            that can detect the position of a hand in images and videos. The
+            difficult part is to recognize the different gestures. The project
+            is in an early stage, but already allows you to 'play' the Guidonian
+            hand. The detection method used is however not very reliable yet
+            (see updates below). Interested in joining the project?{" "}
             <a href="https://bascornelissen.nl/contact" class="text-slate-400">
               Please get in touch!
             </a>
           </p>
 
-          <p class="text-xs">
+          <h2 className="font-semibold">Updates</h2>
+          <ul>
+            <li>
+              <span class="font-semibold me-3">Sep 12, 2024</span>
+              I trained a simple network (1 layer, 64 units) to to classify
+              gestures, using the (64 most informative) distances between joints
+              as input features. The test accuracy and F1 score are around 90%,
+              but in practice this approach is still far from perfect. It may be
+              worthwhile to develop gestures that are easier to discriminate.
+            </li>
+            <li>
+              <span class="font-semibold me-3">Sep 10, 2024</span>
+              Sound! A synthesizer now plays the detected gestures...
+            </li>
+            <li>
+              <span class="font-semibold me-3">Sep 10, 2024</span>
+              A gesture <a href="/record">recorder</a>{" "}
+              has been implemented. This makes it easy to collect training data
+              for the gesture classifier.
+            </li>
+          </ul>
+
+          <p class="text-xs mt-5">
             You can find all{" "}
             <a
               href="https://github.com/bacor/manual-music"

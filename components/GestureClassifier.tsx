@@ -4,7 +4,11 @@ import HandsDetector, { OnFrameProps } from "./HandsDetector.tsx";
 import VideoIndicator from "./VideoIndicator.tsx";
 
 import { clearCanvas, drawHands } from "../src/drawing.tsx";
-import { thumbDistanceClassifier } from "../src/classifiers.tsx";
+import {
+  loadModel,
+  MLPClassifier,
+  thumbDistanceClassifier,
+} from "../src/classifiers.tsx";
 import { Landmark } from "../src/types.tsx";
 import gestures from "../src/gestures.tsx";
 import * as Tone from "tone";
@@ -35,7 +39,10 @@ function Prediction({ gesture }: { gesture: Signal<string | null> }) {
   );
 }
 
-const clf = (landmarks: Landmark[]) => thumbDistanceClassifier(landmarks, 0.1);
+// const clf = (landmarks: Landmark[]) => thumbDistanceClassifier(landmarks, 0.1);
+const { model, selectedFeatures } = await loadModel("model-5");
+const clf = (landmarks: Landmark[]) =>
+  MLPClassifier(model, selectedFeatures, landmarks);
 
 function GestureClassifier({ classifier = clf }) {
   const useBNatural = true;

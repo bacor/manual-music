@@ -6,7 +6,7 @@ import Toggle from "./Toggle.tsx";
 import VideoIndicator from "./VideoIndicator.tsx";
 import { clearCanvas, drawHands } from "../src/drawing.tsx";
 
-import { thumbDistanceClassifier } from "../src/classifiers.tsx";
+import { loadModel, MLPClassifier } from "../src/classifiers.tsx";
 import { Landmark } from "../src/types.tsx";
 import gestures from "../src/gestures.tsx";
 import * as Tone from "tone";
@@ -16,8 +16,12 @@ gestures.forEach((gesture) => {
   gestureToPitch[gesture.id] = gesture.pitch;
 });
 
+// const classifier = (landmarks: Landmark[]) =>
+//   thumbDistanceClassifier(landmarks, 0.1);
+
+const { model, selectedFeatures } = await loadModel("model-5");
 const classifier = (landmarks: Landmark[]) =>
-  thumbDistanceClassifier(landmarks, 0.1);
+  MLPClassifier(model, selectedFeatures, landmarks);
 
 const handsPresentSignal = signal(false);
 const gesture = signal<null | string>(null);
